@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'scienceapi.projects',
     'scienceapi.events',
     'gunicorn',
+    'autofixture',
 ]
 
 MIDDLEWARE_CLASSES = [

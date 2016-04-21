@@ -4,5 +4,5 @@ from scienceapi.projects.views import ProjectsListView
 
 
 urlpatterns = [
-    url('^$', ProjectsListView.as_view())
+    url('^$', ProjectsListView.as_view(), name='project-all')
 ]
