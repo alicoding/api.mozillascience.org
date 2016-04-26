@@ -19,7 +19,7 @@ class ResourceLinkSerializer(serializers.ModelSerializer):
 
 class ProjectWithDetailsSerializer(serializers.ModelSerializer):
     """
-    Serializes a list of projects with each project including the
+    Serializes a project with each project including the
     list of tags, categories and links associated with that project
     as simple strings
     """
