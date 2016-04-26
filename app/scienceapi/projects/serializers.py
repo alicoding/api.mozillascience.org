@@ -19,7 +19,7 @@ class ResourceLinkSerializer(serializers.ModelSerializer):
 
 class ProjectWithDetailsSerializer(serializers.ModelSerializer):
     """
-    Serializes a list of projects with each project including the
+    Serializes a project with each project including the
     list of tags, categories and links associated with that project
     as simple strings
     """
@@ -27,6 +27,16 @@ class ProjectWithDetailsSerializer(serializers.ModelSerializer):
     categories = serializers.StringRelatedField(many=True)
     links = ResourceLinkSerializer(many=True)
     github_contributors = serializers.SerializerMethodField()
+    users = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='user'
+    )
+    events = serializers.HyperlinkedRelatedField(
+        many=True,
+        read_only=True,
+        view_name='event'
+    )
 
     class Meta:
         model = Project
